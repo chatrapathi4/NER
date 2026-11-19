@@ -1,0 +1,344 @@
+{
+  "summary": {
+    "false_positives": 12,
+    "false_negatives": 25,
+    "boundary_errors": 7,
+    "type_errors": 2,
+    "correct": 0,
+    "total_true": 34,
+    "total_pred": 21
+  },
+  "errors": [
+    {
+      "type": "boundary_error",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "true_text": "Omeprazole",
+      "pred_text": "Omeprazole 20 mg once daily",
+      "label": "DRUG",
+      "explanation": "Entity \"Omeprazole\" (DRUG) predicted as \"Omeprazole 20 mg once daily\""
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "missed_text": "20 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"20 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "missed_text": "once daily",
+      "missed_label": "FREQUENCY",
+      "explanation": "Missed entity \"once daily\" (FREQUENCY)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "missed_text": "14 days",
+      "missed_label": "DURATION",
+      "explanation": "Missed entity \"14 days\" (DURATION)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "spurious_text": "before breakfast",
+      "spurious_label": "DOSAGE",
+      "explanation": "Spurious entity \"before breakfast\" predicted as DOSAGE"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Omeprazole 20 mg once daily before breakfast for 14 days.",
+      "spurious_text": "for 14",
+      "spurious_label": "FREQUENCY",
+      "explanation": "Spurious entity \"for 14\" predicted as FREQUENCY"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Administer Insulin 10 units subcutaneously before meals.",
+      "missed_text": "Insulin",
+      "missed_label": "DRUG",
+      "explanation": "Missed entity \"Insulin\" (DRUG)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Administer Insulin 10 units subcutaneously before meals.",
+      "missed_text": "10 units",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"10 units\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Administer Insulin 10 units subcutaneously before meals.",
+      "missed_text": "subcutaneously",
+      "missed_label": "ROUTE",
+      "explanation": "Missed entity \"subcutaneously\" (ROUTE)"
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Metoprolol 50 mg orally twice daily.",
+      "true_text": "Metoprolol",
+      "pred_text": "Metoprolol 50 mg orally",
+      "label": "DRUG",
+      "explanation": "Entity \"Metoprolol\" (DRUG) predicted as \"Metoprolol 50 mg orally\""
+    },
+    {
+      "type": "type_error",
+      "sentence": "Metoprolol 50 mg orally twice daily.",
+      "true_text": "twice daily",
+      "true_label": "FREQUENCY",
+      "pred_label": "DOSAGE",
+      "explanation": "\"twice daily\" labeled as DOSAGE instead of FREQUENCY"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Metoprolol 50 mg orally twice daily.",
+      "missed_text": "50 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"50 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Metoprolol 50 mg orally twice daily.",
+      "missed_text": "orally",
+      "missed_label": "ROUTE",
+      "explanation": "Missed entity \"orally\" (ROUTE)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Metoprolol 50 mg orally twice daily.",
+      "spurious_text": ".",
+      "spurious_label": "FREQUENCY",
+      "explanation": "Spurious entity \".\" predicted as FREQUENCY"
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Amlodipine 5 mg once daily for hypertension.",
+      "true_text": "Amlodipine",
+      "pred_text": "Amlodipine 5 mg once",
+      "label": "DRUG",
+      "explanation": "Entity \"Amlodipine\" (DRUG) predicted as \"Amlodipine 5 mg once\""
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Amlodipine 5 mg once daily for hypertension.",
+      "missed_text": "5 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"5 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Amlodipine 5 mg once daily for hypertension.",
+      "missed_text": "once daily",
+      "missed_label": "FREQUENCY",
+      "explanation": "Missed entity \"once daily\" (FREQUENCY)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Amlodipine 5 mg once daily for hypertension.",
+      "spurious_text": "daily for",
+      "spurious_label": "DOSAGE",
+      "explanation": "Spurious entity \"daily for\" predicted as DOSAGE"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Amlodipine 5 mg once daily for hypertension.",
+      "spurious_text": "hypertension .",
+      "spurious_label": "FREQUENCY",
+      "explanation": "Spurious entity \"hypertension .\" predicted as FREQUENCY"
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "true_text": "Doxycycline",
+      "pred_text": "Doxycycline 100 mg capsule",
+      "label": "DRUG",
+      "explanation": "Entity \"Doxycycline\" (DRUG) predicted as \"Doxycycline 100 mg capsule\""
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "missed_text": "100 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"100 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "missed_text": "capsule",
+      "missed_label": "FORM",
+      "explanation": "Missed entity \"capsule\" (FORM)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "missed_text": "orally",
+      "missed_label": "ROUTE",
+      "explanation": "Missed entity \"orally\" (ROUTE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "missed_text": "twice daily",
+      "missed_label": "FREQUENCY",
+      "explanation": "Missed entity \"twice daily\" (FREQUENCY)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "missed_text": "14 days",
+      "missed_label": "DURATION",
+      "explanation": "Missed entity \"14 days\" (DURATION)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "spurious_text": "orally twice",
+      "spurious_label": "DOSAGE",
+      "explanation": "Spurious entity \"orally twice\" predicted as DOSAGE"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "spurious_text": "for",
+      "spurious_label": "ROUTE",
+      "explanation": "Spurious entity \"for\" predicted as ROUTE"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Doxycycline 100 mg capsule orally twice daily for 14 days.",
+      "spurious_text": "days .",
+      "spurious_label": "FREQUENCY",
+      "explanation": "Spurious entity \"days .\" predicted as FREQUENCY"
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "true_text": "Amoxicillin",
+      "pred_text": "Amoxicillin 250 mg orally",
+      "label": "DRUG",
+      "explanation": "Entity \"Amoxicillin\" (DRUG) predicted as \"Amoxicillin 250 mg orally\""
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "true_text": "every 8 hours",
+      "pred_text": "hours",
+      "label": "FREQUENCY",
+      "explanation": "Entity \"every 8 hours\" (FREQUENCY) predicted as \"hours\""
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "missed_text": "250 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"250 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "missed_text": "orally",
+      "missed_label": "ROUTE",
+      "explanation": "Missed entity \"orally\" (ROUTE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "missed_text": "7 days",
+      "missed_label": "DURATION",
+      "explanation": "Missed entity \"7 days\" (DURATION)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Amoxicillin 250 mg orally every 8 hours for 7 days.",
+      "spurious_text": "every 8",
+      "spurious_label": "DOSAGE",
+      "explanation": "Spurious entity \"every 8\" predicted as DOSAGE"
+    },
+    {
+      "type": "boundary_error",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "true_text": "Ciprofloxacin",
+      "pred_text": "Ciprofloxacin 500 mg orally twice daily for",
+      "label": "DRUG",
+      "explanation": "Entity \"Ciprofloxacin\" (DRUG) predicted as \"Ciprofloxacin 500 mg orally twice daily for\""
+    },
+    {
+      "type": "type_error",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "true_text": "10 days",
+      "true_label": "DURATION",
+      "pred_label": "DOSAGE",
+      "explanation": "\"10 days\" labeled as DOSAGE instead of DURATION"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "missed_text": "500 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"500 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "missed_text": "orally",
+      "missed_label": "ROUTE",
+      "explanation": "Missed entity \"orally\" (ROUTE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "missed_text": "twice daily",
+      "missed_label": "FREQUENCY",
+      "explanation": "Missed entity \"twice daily\" (FREQUENCY)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Ciprofloxacin 500 mg orally twice daily for 10 days.",
+      "spurious_text": ".",
+      "spurious_label": "ROUTE",
+      "explanation": "Spurious entity \".\" predicted as ROUTE"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "missed_text": "Simvastatin",
+      "missed_label": "DRUG",
+      "explanation": "Missed entity \"Simvastatin\" (DRUG)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "missed_text": "40 mg",
+      "missed_label": "DOSAGE",
+      "explanation": "Missed entity \"40 mg\" (DOSAGE)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "missed_text": "tablet",
+      "missed_label": "FORM",
+      "explanation": "Missed entity \"tablet\" (FORM)"
+    },
+    {
+      "type": "false_negative",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "missed_text": "once daily",
+      "missed_label": "FREQUENCY",
+      "explanation": "Missed entity \"once daily\" (FREQUENCY)"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "spurious_text": "daily in",
+      "spurious_label": "DOSAGE",
+      "explanation": "Spurious entity \"daily in\" predicted as DOSAGE"
+    },
+    {
+      "type": "false_positive",
+      "sentence": "Simvastatin 40 mg tablet once daily in the evening.",
+      "spurious_text": "evening .",
+      "spurious_label": "FREQUENCY",
+      "explanation": "Spurious entity \"evening .\" predicted as FREQUENCY"
+    }
+  ]
+}

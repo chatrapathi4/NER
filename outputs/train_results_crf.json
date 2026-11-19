@@ -1,0 +1,9 @@
+{
+  "model": "CRF",
+  "train_samples": 32,
+  "val_f1": 0.7916666666666666,
+  "val_precision": 0.7916666666666666,
+  "val_recall": 0.7916666666666666,
+  "val_report": "              precision    recall  f1-score   support\n\n      DOSAGE       0.80      0.80      0.80         5\n        DRUG       0.86      1.00      0.92         6\n    DURATION       1.00      1.00      1.00         1\n        FORM       0.67      0.67      0.67         3\n   FREQUENCY       0.67      0.67      0.67         6\n       ROUTE       1.00      0.67      0.80         3\n\n   micro avg       0.79      0.79      0.79        24\n   macro avg       0.83      0.80      0.81        24\nweighted avg       0.80      0.79      0.79        24\n",
+  "val_samples": 6
+}

@@ -1,0 +1,46 @@
+{
+  "overall": {
+    "f1": 0.6451612903225806,
+    "precision": 0.7142857142857143,
+    "recall": 0.5882352941176471
+  },
+  "per_entity": {
+    "DRUG": {
+      "precision": 0.7777777777777778,
+      "recall": 0.875,
+      "f1": 0.823529411764706,
+      "support": 8
+    },
+    "DOSAGE": {
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1": 0.875,
+      "support": 8
+    },
+    "FREQUENCY": {
+      "precision": 0.6666666666666666,
+      "recall": 0.8571428571428571,
+      "f1": 0.75,
+      "support": 7
+    },
+    "DURATION": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 4
+    },
+    "ROUTE": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 5
+    },
+    "FORM": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 2
+    }
+  },
+  "report_text": "              precision    recall  f1-score   support\n\n      DOSAGE     0.8750    0.8750    0.8750         8\n        DRUG     0.7778    0.8750    0.8235         8\n    DURATION     0.0000    0.0000    0.0000         4\n        FORM     0.0000    0.0000    0.0000         2\n   FREQUENCY     0.6667    0.8571    0.7500         7\n       ROUTE     0.0000    0.0000    0.0000         5\n\n   micro avg     0.7143    0.5882    0.6452        34\n   macro avg     0.3866    0.4345    0.4081        34\nweighted avg     0.5261    0.5882    0.5541        34\n"
+}

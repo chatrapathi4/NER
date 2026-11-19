@@ -1,0 +1,11 @@
+{
+  "model": "BioBERT",
+  "model_name": "dmis-lab/biobert-base-cased-v1.2",
+  "train_samples": 32,
+  "train_loss": 1.6214143753051757,
+  "epochs_trained": 5.0,
+  "val_f1": 0.5238095238095238,
+  "val_precision": 0.6111111111111112,
+  "val_recall": 0.4583333333333333,
+  "val_loss": 1.3699994087219238
+}

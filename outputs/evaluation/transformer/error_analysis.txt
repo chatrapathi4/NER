@@ -1,0 +1,95 @@
+============================================================
+ERROR ANALYSIS REPORT
+============================================================
+
+Total true entities:     34
+Total predicted entities: 21
+Correct predictions:     0
+False positives:         12
+False negatives:         25
+Boundary errors:         7
+Type errors:             2
+
+------------------------------------------------------------
+DETAILED ERRORS
+------------------------------------------------------------
+
+Error #1 (boundary_error):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Entity "Omeprazole" (DRUG) predicted as "Omeprazole 20 mg once daily"
+
+Error #2 (false_negative):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Missed entity "20 mg" (DOSAGE)
+
+Error #3 (false_negative):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Missed entity "once daily" (FREQUENCY)
+
+Error #4 (false_negative):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Missed entity "14 days" (DURATION)
+
+Error #5 (false_positive):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Spurious entity "before breakfast" predicted as DOSAGE
+
+Error #6 (false_positive):
+  Sentence: Omeprazole 20 mg once daily before breakfast for 14 days.
+  Details:  Spurious entity "for 14" predicted as FREQUENCY
+
+Error #7 (false_negative):
+  Sentence: Administer Insulin 10 units subcutaneously before meals.
+  Details:  Missed entity "Insulin" (DRUG)
+
+Error #8 (false_negative):
+  Sentence: Administer Insulin 10 units subcutaneously before meals.
+  Details:  Missed entity "10 units" (DOSAGE)
+
+Error #9 (false_negative):
+  Sentence: Administer Insulin 10 units subcutaneously before meals.
+  Details:  Missed entity "subcutaneously" (ROUTE)
+
+Error #10 (boundary_error):
+  Sentence: Metoprolol 50 mg orally twice daily.
+  Details:  Entity "Metoprolol" (DRUG) predicted as "Metoprolol 50 mg orally"
+
+Error #11 (type_error):
+  Sentence: Metoprolol 50 mg orally twice daily.
+  Details:  "twice daily" labeled as DOSAGE instead of FREQUENCY
+
+Error #12 (false_negative):
+  Sentence: Metoprolol 50 mg orally twice daily.
+  Details:  Missed entity "50 mg" (DOSAGE)
+
+Error #13 (false_negative):
+  Sentence: Metoprolol 50 mg orally twice daily.
+  Details:  Missed entity "orally" (ROUTE)
+
+Error #14 (false_positive):
+  Sentence: Metoprolol 50 mg orally twice daily.
+  Details:  Spurious entity "." predicted as FREQUENCY
+
+Error #15 (boundary_error):
+  Sentence: Amlodipine 5 mg once daily for hypertension.
+  Details:  Entity "Amlodipine" (DRUG) predicted as "Amlodipine 5 mg once"
+
+Error #16 (false_negative):
+  Sentence: Amlodipine 5 mg once daily for hypertension.
+  Details:  Missed entity "5 mg" (DOSAGE)
+
+Error #17 (false_negative):
+  Sentence: Amlodipine 5 mg once daily for hypertension.
+  Details:  Missed entity "once daily" (FREQUENCY)
+
+Error #18 (false_positive):
+  Sentence: Amlodipine 5 mg once daily for hypertension.
+  Details:  Spurious entity "daily for" predicted as DOSAGE
+
+Error #19 (false_positive):
+  Sentence: Amlodipine 5 mg once daily for hypertension.
+  Details:  Spurious entity "hypertension ." predicted as FREQUENCY
+
+Error #20 (boundary_error):
+  Sentence: Doxycycline 100 mg capsule orally twice daily for 14 days.
+  Details:  Entity "Doxycycline" (DRUG) predicted as "Doxycycline 100 mg capsule"
