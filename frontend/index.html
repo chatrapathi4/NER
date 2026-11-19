@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Medical NER - Extract drug names, dosages, frequencies, and more from medical text using AI-powered Named Entity Recognition.">
+    <title>Medical NER — Drug &amp; Dosage Extraction</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚕</span>
+                    <h1>Medical NER</h1>
+                </div>
+                <p class="subtitle">Domain-Specific Named Entity Recognition for Drug &amp; Dosage Extraction</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Input Section -->
+            <section class="input-section">
+                <div class="section-header">
+                    <h2>Enter Medical Text</h2>
+                    <span class="model-badge" id="modelBadge">Loading...</span>
+                </div>
+                <textarea
+                    id="inputText"
+                    placeholder="Enter prescription or medical text here...&#10;&#10;Example: Take Paracetamol 500 mg twice daily for 5 days after food."
+                    rows="5"
+                ></textarea>
+                <div class="actions">
+                    <button id="extractBtn" class="btn-primary" onclick="extractEntities()">
+                        <span class="btn-icon">🔍</span>
+                        Extract Entities
+                    </button>
+                    <button id="clearBtn" class="btn-secondary" onclick="clearAll()">
+                        Clear
+                    </button>
+                </div>
+
+                <!-- Sample Sentences -->
+                <div class="samples">
+                    <p class="samples-label">Try a sample:</p>
+                    <div class="sample-chips">
+                        <button class="chip" onclick="useSample(0)">Paracetamol prescription</button>
+                        <button class="chip" onclick="useSample(1)">Amoxicillin with route</button>
+                        <button class="chip" onclick="useSample(2)">Hydrocortisone cream</button>
+                        <button class="chip" onclick="useSample(3)">Insulin injection</button>
+                        <button class="chip" onclick="useSample(4)">Complex prescription</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Extracting entities...</p>
+            </div>
+
+            <!-- Results Section -->
+            <section id="results" class="results-section hidden">
+                <div class="section-header">
+                    <h2>Extracted Entities</h2>
+                    <span class="entity-count" id="entityCount"></span>
+                </div>
+
+                <!-- Annotated Text -->
+                <div id="annotatedText" class="annotated-text"></div>
+
+                <!-- Entity Cards -->
+                <div id="entityCards" class="entity-cards"></div>
+
+                <!-- JSON Output -->
+                <details class="json-output">
+                    <summary>View JSON Response</summary>
+                    <pre id="jsonOutput"></pre>
+                </details>
+            </section>
+
+            <!-- Error Display -->
+            <div id="error" class="error-message hidden"></div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="disclaimer">
+                <p><strong>⚠ Medical Disclaimer:</strong> This system is an NLP information-extraction
+                prototype and is <strong>NOT</strong> a medical diagnosis or treatment system.
+                Extracted information should not be used as medical advice.
+                Always consult a qualified healthcare professional.</p>
+            </div>
+            <p class="copyright">Medical NER v1.0.0 — College NLP Project</p>
+        </footer>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

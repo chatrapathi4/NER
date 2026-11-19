@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+eggs/
+*.egg
+
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project-specific
+models/crf/*.pkl
+models/biobert/
+models/biobert/**
+!models/crf/.gitkeep
+!models/biobert/.gitkeep
+
+# Data (keep structure, ignore large generated files)
+data/processed/*.jsonl
+data/train/*.jsonl
+data/validation/*.jsonl
+data/test/*.jsonl
+!data/raw/annotations.jsonl
+
+# Logs
+*.log
+runs/
+wandb/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment
+.env
+.env.*
+*.pem
+*.key
+*secret*
+*credentials*
+
+# Test and generated caches
+.pytest_cache/
+htmlcov/
+.coverage
+.coverage.*
+
+# Generated outputs
+outputs/eval_tmp/
+outputs/evaluation/
+outputs/train_results_*.json

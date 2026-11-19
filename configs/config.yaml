@@ -1,0 +1,142 @@
+# ==============================================================================
+# Medical NER Project Configuration
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Project Metadata
+# ------------------------------------------------------------------------------
+project:
+  name: "Medical NER"
+  version: "1.0.0"
+  description: "Domain-Specific NER for Medical Drug and Dosage Extraction"
+  random_seed: 42
+
+# ------------------------------------------------------------------------------
+# Data Paths
+# ------------------------------------------------------------------------------
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  train_dir: "data/train"
+  validation_dir: "data/validation"
+  test_dir: "data/test"
+  raw_annotations: "data/raw/annotations.jsonl"
+  bio_dataset: "data/processed/bio_dataset.jsonl"
+  train_file: "data/train/train.jsonl"
+  val_file: "data/validation/val.jsonl"
+  test_file: "data/test/test.jsonl"
+  # Train/val/test split ratios
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+
+# ------------------------------------------------------------------------------
+# Entity Labels (BIO Format)
+# ------------------------------------------------------------------------------
+labels:
+  entity_types:
+    - "DRUG"
+    - "DOSAGE"
+    - "FREQUENCY"
+    - "DURATION"
+    - "ROUTE"
+    - "FORM"
+  # Full BIO label list (auto-generated from entity_types during runtime,
+  # listed here for reference and configuration)
+  bio_labels:
+    - "O"
+    - "B-DRUG"
+    - "I-DRUG"
+    - "B-DOSAGE"
+    - "I-DOSAGE"
+    - "B-FREQUENCY"
+    - "I-FREQUENCY"
+    - "B-DURATION"
+    - "I-DURATION"
+    - "B-ROUTE"
+    - "I-ROUTE"
+    - "B-FORM"
+    - "I-FORM"
+
+# ------------------------------------------------------------------------------
+# Model Configuration
+# ------------------------------------------------------------------------------
+model:
+  # Transformer model from HuggingFace Hub
+  transformer_name: "dmis-lab/biobert-base-cased-v1.2"
+  # Maximum sequence length for tokenization
+  max_length: 128
+  # Directory to save trained models
+  crf_model_dir: "models/crf"
+  transformer_model_dir: "models/biobert"
+
+# ------------------------------------------------------------------------------
+# Training Hyperparameters — Transformer
+# ------------------------------------------------------------------------------
+training:
+  transformer:
+    epochs: 20
+    batch_size: 16
+    learning_rate: 2.0e-5
+    weight_decay: 0.01
+    warmup_ratio: 0.1
+    # Early stopping patience (number of eval steps without improvement)
+    early_stopping_patience: 3
+    # Evaluate every N steps (set to "epoch" for per-epoch evaluation)
+    eval_strategy: "epoch"
+    save_strategy: "epoch"
+    # Load the best model at the end of training
+    load_best_model_at_end: true
+    # Metric for best model selection
+    metric_for_best_model: "f1"
+    greater_is_better: true
+    # Gradient accumulation (useful for small GPUs)
+    gradient_accumulation_steps: 1
+    # FP16 training (set to true if GPU supports it)
+    fp16: false
+    # Logging
+    logging_steps: 10
+
+  # Training Hyperparameters — CRF
+  crf:
+    algorithm: "lbfgs"
+    c1: 0.1          # L1 regularization
+    c2: 0.1          # L2 regularization
+    max_iterations: 100
+
+# ------------------------------------------------------------------------------
+# Data Augmentation
+# ------------------------------------------------------------------------------
+augmentation:
+  enabled: true
+  # Number of augmented copies per original sentence
+  num_augments: 2
+  # Drug name synonyms for replacement
+  drug_synonyms:
+    Paracetamol: ["Acetaminophen", "Tylenol"]
+    Amoxicillin: ["Amoxil", "Trimox"]
+    Metformin: ["Glucophage", "Fortamet"]
+    Ibuprofen: ["Advil", "Motrin"]
+    Azithromycin: ["Zithromax", "Z-Pak"]
+    Omeprazole: ["Prilosec", "Losec"]
+    Ciprofloxacin: ["Cipro"]
+    Lisinopril: ["Zestril", "Prinivil"]
+
+# ------------------------------------------------------------------------------
+# API Configuration
+# ------------------------------------------------------------------------------
+api:
+  host: "0.0.0.0"
+  port: 8000
+  # Which model to use for inference: "transformer" or "crf" or "rule_based"
+  model_type: "rule_based"
+  # CORS origins
+  cors_origins:
+    - "*"
+
+# ------------------------------------------------------------------------------
+# Evaluation
+# ------------------------------------------------------------------------------
+evaluation:
+  # Output directory for evaluation reports
+  output_dir: "outputs/evaluation"
