@@ -541,9 +541,32 @@ F1        = 0.667
 
 ### Results
 
-> **IMPORTANT**: Results below will be populated after training. If you see placeholder values, run the training pipeline first.
->
-> **Results will be populated after training.**
+The models were evaluated on `data/test/test.jsonl` using entity-level precision,
+recall, and F1-score, as well as token-level accuracy.
+
+| Model | Precision | Recall | F1-score | Token Accuracy |
+|-------|-----------|--------|----------|----------------|
+| CRF | 94.29% | 97.06% | 95.65% | 97.37% |
+| BioBERT | 71.43% | 58.82% | 64.52% | 75.00% |
+
+The CRF currently outperforms BioBERT on this test set. Entity-level metrics
+require exact type and boundary matches. Token-level accuracy was computed
+over 112 evaluated tokens.
+
+| Entity | CRF Precision | CRF Recall | CRF F1 | BioBERT Precision | BioBERT Recall | BioBERT F1 | Support |
+|--------|----------------|------------|--------|--------------------|----------------|------------|---------|
+| DRUG | 80.00% | 100.00% | 88.89% | 77.78% | 87.50% | 82.35% | 8 |
+| DOSAGE | 100.00% | 100.00% | 100.00% | 87.50% | 87.50% | 87.50% | 8 |
+| FREQUENCY | 100.00% | 100.00% | 100.00% | 66.67% | 85.71% | 75.00% | 7 |
+| DURATION | 100.00% | 100.00% | 100.00% | 0.00% | 0.00% | 0.00% | 4 |
+| ROUTE | 100.00% | 80.00% | 88.89% | 0.00% | 0.00% | 0.00% | 5 |
+| FORM | 100.00% | 100.00% | 100.00% | 0.00% | 0.00% | 0.00% | 2 |
+
+Evaluation reports are stored in `outputs/evaluation/`:
+
+- `outputs/evaluation/crf/evaluation_report.json`
+- `outputs/evaluation/transformer/evaluation_report.json`
+- `outputs/evaluation/model_comparison.txt`
 
 ---
 
